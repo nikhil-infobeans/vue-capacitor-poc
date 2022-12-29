@@ -1,15 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <v-app :theme="theme">
+    <v-app-bar dense>
+      <v-app-bar-title>Vue Capacitor - POC</v-app-bar-title>
+      <v-btn
+        :prepend-icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
+        @click="switchTheme"
+      >Toggle Theme</v-btn>
+    </v-app-bar>
+    <v-main>
+      <v-container>
+        <PwaPoc />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PwaPoc from './components/PwaPoc'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PwaPoc
+  },
+  data() {
+    return {
+      theme: 'dark'
+    }
+  },
+  methods: {
+    switchTheme() {
+      this.theme = this.theme === 'light' ? 'dark' : 'light'
+    }
   }
 }
 </script>
@@ -19,8 +41,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

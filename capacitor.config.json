@@ -1,0 +1,6 @@
+{
+  "appId": "com.capacitorpoc.app",
+  "appName": "capacitor-poc",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
