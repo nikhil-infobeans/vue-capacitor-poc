@@ -50,11 +50,12 @@ npm i @capacitor/android @capacitor/ios
 npx cap add android
 npx cap add ios
 ```
-###7. Create the build
+
+### 6. Create the build
 ```
 yarn build
 ```
-###7. Sync your web code to your native project
+### 7. Sync your web code to your native project
 ```
 npx cap sync
 ```
